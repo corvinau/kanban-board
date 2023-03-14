@@ -12,6 +12,10 @@ export const Container = styled.div`
 
   padding: 15px;
 
+  :last-child {
+    margin-bottom: 0;
+  }
+
   .card-name {
     font-weight: 500;
     font-size: 16px;

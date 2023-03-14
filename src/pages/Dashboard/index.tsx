@@ -1,6 +1,7 @@
 import React from 'react';
 
 import BoardColumn from '../../components/BoardColumn';
+import BoardColumnButton from '../../components/BoardColumnButton';
 
 import { Container } from './styles';
 
@@ -10,6 +11,7 @@ const Dashboard: React.FC = () => {
       <BoardColumn />
       <BoardColumn />
       <BoardColumn />
+      {/* <BoardColumn />
       <BoardColumn />
       <BoardColumn />
       <BoardColumn />
@@ -17,8 +19,9 @@ const Dashboard: React.FC = () => {
       <BoardColumn />
       <BoardColumn />
       <BoardColumn />
-      <BoardColumn />
-      <BoardColumn />
+      <BoardColumn /> */}
+
+      <BoardColumnButton />
     </Container>
   );
 };
