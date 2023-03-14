@@ -11,7 +11,6 @@ const Dashboard: React.FC = () => {
       <BoardColumn />
       <BoardColumn />
       <BoardColumn />
-      {/* <BoardColumn />
       <BoardColumn />
       <BoardColumn />
       <BoardColumn />
@@ -19,7 +18,8 @@ const Dashboard: React.FC = () => {
       <BoardColumn />
       <BoardColumn />
       <BoardColumn />
-      <BoardColumn /> */}
+      <BoardColumn />
+      <BoardColumn />
 
       <BoardColumnButton />
     </Container>

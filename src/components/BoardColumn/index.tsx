@@ -7,6 +7,10 @@ import BoardCard from '../BoardCard';
 import { Container } from './styles';
 
 const BoardColumn: React.FC = () => {
+  const handleOpenPanel = () => {
+    console.log('clicou');
+  };
+
   return (
     <Container>
       <div className="column-name">Nome da coluna</div>
@@ -15,7 +19,6 @@ const BoardColumn: React.FC = () => {
         <BoardCard />
         <BoardCard />
         <BoardCard />
-        {/* <BoardCard />
         <BoardCard />
         <BoardCard />
         <BoardCard />
@@ -29,9 +32,10 @@ const BoardColumn: React.FC = () => {
         <BoardCard />
         <BoardCard />
         <BoardCard />
-        <BoardCard /> */}
+        <BoardCard />
+        <BoardCard />
       </div>
-      <div className="column-button" role="button">
+      <div className="column-button" role="button" onClick={handleOpenPanel}>
         <div className="button-icon">
           <FaPlus />
         </div>

@@ -5,9 +5,13 @@ import { FaPlus } from 'react-icons/fa';
 import { Container } from './styles';
 
 const BoardColumnButton: React.FC = () => {
+  const handleOpenPanel = () => {
+    console.log('clicou');
+  };
+
   return (
     <Container>
-      <div className="column-button" role="button">
+      <div className="column-button" role="button" onClick={handleOpenPanel}>
         <div className="button-icon">
           <FaPlus />
         </div>
