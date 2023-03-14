@@ -17,12 +17,13 @@
 
   height: calc(100vh - 175px);
 
-  overflow-x: auto;
+  overflow: auto hidden;
 }
 
   /* personalização da scrollbar */
   ::-webkit-scrollbar {
-    height: 10px;
+    height: 5px;
+    width: 5px;
   }
 
   ::-webkit-scrollbar-thumb {
