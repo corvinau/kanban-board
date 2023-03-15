@@ -43,7 +43,7 @@ export const Tag = styled.div`
   height: 24px;
   width: fit-content;
 
-  background: #5CC4FF;
+  background-color: ${props => (props.color ? props.color : '#afb6bd')};;
   border-radius: 5px;
 
   font-weight: 700;

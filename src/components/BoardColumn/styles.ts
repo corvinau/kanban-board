@@ -7,7 +7,9 @@ export const Container = styled.div`
   margin-right: 20px;
   padding: 20px 0;
 
-  background-color: #5CC4FF;
+  background-color: ${(props) => props.color ? props.color : '#afb6bd'};
+
+  border-top: 5px solid rgba(0, 0, 0, 0.1);
 
   :last-child {
     margin-right: 0;
@@ -23,7 +25,7 @@ export const Container = styled.div`
 
   .column-card {
     overflow: auto;
-    max-height: calc(100vh - 320px);
+    max-height: calc(100vh - 325px);
     margin: 0px 15px 0px 20px;
   }
 
@@ -33,7 +35,7 @@ export const Container = styled.div`
 
     border-radius: 5px;
     color: #FFFFFF;
-    background-color: #5CC4FF;
+    background-color: ${props => (props.color ? props.color : '#afb6bd')};
     margin: 20px 20px 0;
 
     :hover {

@@ -2,12 +2,12 @@ import React from 'react';
 
 import { Container } from './styles';
 
-const SidePanel: React.FC = () => {
+const ModalPanel: React.FC = () => {
   return (
     <Container>
-      <div>painel lateral</div>
+      <div>modal</div>
     </Container>
   );
 };
 
-export default SidePanel;
+export default ModalPanel;
