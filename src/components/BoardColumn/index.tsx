@@ -20,15 +20,17 @@ const BoardColumn: React.FC<IColumn> = data => {
         <div className="column-name">{data.name}</div>
         <div className="column-card">
           {data.cards.length !== 0 ? (
-            mockCards.map(item => (
-              <BoardCard
-                id={item.id}
-                title={item.title}
-                tag={item.tag}
-                description={item.description}
-                column={item.column}
-              />
-            ))
+            mockCards
+              .filter(item => item.column === data.id)
+              .map(item => (
+                <BoardCard
+                  id={item.id}
+                  title={item.title}
+                  tag={item.tag}
+                  description={item.description}
+                  column={item.column}
+                />
+              ))
           ) : (
             <BoardCardEmpty />
           )}

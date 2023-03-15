@@ -8,7 +8,7 @@ interface ICard {
   title: string;
   tag: ITag;
   description?: string;
-  column: string[];
+  column: string;
 }
 
 interface IColumn {

@@ -7,7 +7,7 @@ const mockCards: ICard[] = [
       color: '#59D090'
     },
     description: '',
-    column: ['1'],
+    column: '1',
   },
   {
     id: '2',
@@ -17,7 +17,7 @@ const mockCards: ICard[] = [
       color: '#59D090'
     },
     description: '',
-    column: ['1'],
+    column: '1',
   },
   {
     id: '3',
@@ -27,7 +27,7 @@ const mockCards: ICard[] = [
       color: '#59D090'
     },
     description: '',
-    column: ['1'],
+    column: '1',
   },
   {
     id: '4',
@@ -37,7 +37,7 @@ const mockCards: ICard[] = [
       color: '#59D090'
     },
     description: '',
-    column: ['1'],
+    column: '1',
   },
   {
     id: '5',
@@ -47,37 +47,37 @@ const mockCards: ICard[] = [
       color: '#5CC4FF'
     },
     description: '',
-    column: ['2'],
+    column: '2',
   },
   {
     id: '6',
     title: 'Implementação do blog',
     tag: {
-      name: 'Tag 2',
+      name: 'Tag 3',
       color: '#945AD1'
     },
     description: '',
-    column: ['3'],
+    column: '3',
   },
   {
     id: '7',
     title: 'Análise de métricas',
     tag: {
-      name: 'Tag 2',
+      name: 'Tag 3',
       color: '#945AD1'
     },
     description: '',
-    column: ['3'],
+    column: '3',
   },
   {
     id: '8',
     title: 'UX Review',
     tag: {
-      name: 'Tag 2',
+      name: 'Tag 3',
       color: '#945AD1'
     },
     description: '',
-    column: ['3'],
+    column: '3',
   },
   {
     id: '9',
@@ -87,7 +87,7 @@ const mockCards: ICard[] = [
       color: ''
     },
     description: '',
-    column: ['4'],
+    column: '3',
   },
 ]
 
