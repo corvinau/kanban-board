@@ -16,6 +16,11 @@ export const Container = styled.div`
     margin-bottom: 0;
   }
 
+  :hover {
+    box-shadow: inset 0em 0em 0em 10em rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
   .card-name {
     font-weight: 500;
     font-size: 16px;

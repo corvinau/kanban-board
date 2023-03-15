@@ -3,10 +3,6 @@
   height: 100vh;
   padding: 40px 60px;
   background-color: #E1E8ED;
-
-  background-image: url('assets/background.svg');
-  background-repeat: no-repeat;
-  background-position: 92% 92%;
 }
 
 .app-header {
@@ -22,20 +18,30 @@
   height: calc(100vh - 175px);
 
   overflow: auto hidden;
+
+  background-image: url('assets/background.svg');
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 
-  /* personalização da scrollbar */
-  ::-webkit-scrollbar {
-    height: 5px;
-    width: 5px;
-  }
+/* personalização da scrollbar */
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
 
-  ::-webkit-scrollbar-thumb {
-    background-color: #8a8a8a;
-    border-radius: 10px;
-  }
+::-webkit-scrollbar-thumb {
+  background-color: #8a8a8a;
+  border-radius: 10px;
+}
 
-  ::-webkit-scrollbar-track {
-    background-color: #b1b1b1;
-    border-radius: 10px;
+::-webkit-scrollbar-track {
+  background-color: #b1b1b1;
+  border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+  .app-body {
+    background-size: contain;
   }
+}

@@ -3,6 +3,7 @@ import React from 'react';
 import { FaPlus } from 'react-icons/fa';
 
 import BoardCard from '../BoardCard';
+// import BoardCardEmpty from '../BoardCardEmpty';
 
 import { Container } from './styles';
 
@@ -34,6 +35,8 @@ const BoardColumn: React.FC = () => {
         <BoardCard />
         <BoardCard />
         <BoardCard />
+
+        {/* <BoardCardEmpty /> */}
       </div>
       <div className="column-button" role="button" onClick={handleOpenPanel}>
         <div className="button-icon">
