@@ -4,7 +4,11 @@ import { FaPlus } from 'react-icons/fa';
 
 import { Container } from './styles';
 
-const BoardColumnButton: React.FC = () => {
+interface IButtonProps {
+  name: string;
+}
+
+const BoardColumnButton: React.FC<IButtonProps> = ({ name }) => {
   const handleOpenPanel = () => {
     console.log('clicou');
   };
@@ -15,7 +19,7 @@ const BoardColumnButton: React.FC = () => {
         <div className="button-icon">
           <FaPlus />
         </div>
-        <div className="button-name">Adicionar outra lista</div>
+        <div className="button-name">{name}</div>
       </div>
     </Container>
   );

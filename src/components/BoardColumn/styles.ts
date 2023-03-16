@@ -11,10 +11,6 @@ export const Container = styled.div`
 
   border-top: 5px solid rgba(0, 0, 0, 0.1);
 
-  :last-child {
-    margin-right: 0;
-  }
-
   .column-name {
     font-weight: 700;
     font-size: 18px;

@@ -79,16 +79,6 @@ const mockCards: ICard[] = [
     description: '',
     column: '3',
   },
-  {
-    id: '9',
-    title: 'Teste',
-    tag: {
-      name: '',
-      color: ''
-    },
-    description: '',
-    column: '3',
-  },
 ]
 
 export default mockCards;

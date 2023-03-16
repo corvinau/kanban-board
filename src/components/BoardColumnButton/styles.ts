@@ -4,14 +4,10 @@ export const Container = styled.div`
   width: 315px;
 
   border-radius: 5px;
-  margin-right: 20px;
+  margin-bottom: 20px;
   padding: 20px;
 
   background-color: #CAD0D5;
-
-  :last-child {
-    margin-right: 0;
-  }
 
   :hover {
     filter: brightness(0.8);

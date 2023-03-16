@@ -17,12 +17,6 @@ const mockColumns: IColumn[] = [
     color: '#59D090',
     cards: ['6', '7', '8']
   },
-  {
-    id: '',
-    name: 'Teste',
-    color: '',
-    cards: []
-  },
 ]
 
 export default mockColumns;

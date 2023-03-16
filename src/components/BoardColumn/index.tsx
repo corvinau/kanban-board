@@ -6,6 +6,8 @@ import { FaPlus } from 'react-icons/fa';
 
 import BoardCard from '../BoardCard';
 import BoardCardEmpty from '../BoardCardEmpty';
+import ModalPanel from '../ModalPanel';
+import FormCard from '../FormCard';
 
 import { Container } from './styles';
 
@@ -24,6 +26,7 @@ const BoardColumn: React.FC<IColumn> = data => {
               .filter(item => item.column === data.id)
               .map(item => (
                 <BoardCard
+                  key={item.id}
                   id={item.id}
                   title={item.title}
                   tag={item.tag}
@@ -39,7 +42,11 @@ const BoardColumn: React.FC<IColumn> = data => {
           <div className="button-icon">
             <FaPlus />
           </div>
-          <div className="button-name">Adicionar outro cartão</div>
+          <ModalPanel
+            button={<div className="button-name">Adicionar novo cartão</div>}
+            title="Adicionar novo cartão"
+            form={<FormCard />}
+          />
         </div>
       </div>
     </Container>
