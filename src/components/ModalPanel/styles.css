@@ -1,7 +1,5 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.modal-call-button {
+  cursor: pointer;
 }
 
 .modal-overlay {

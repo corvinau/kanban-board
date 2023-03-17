@@ -22,17 +22,21 @@ const ModalPanel: React.FC<IModalProps> = ({
 }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
-  function handleOpenModal() {
+  const handleOpenModal = () => {
     setIsOpen(true);
-  }
+  };
 
-  function handleCloseModal() {
+  const handleCloseModal = () => {
     setIsOpen(false);
-  }
+  };
 
   return (
-    <div className="container">
-      <div role="button" onClick={handleOpenModal}>
+    <div>
+      <div
+        className="modal-call-button"
+        role="button"
+        onClick={handleOpenModal}
+      >
         {button}
       </div>
       <Modal

@@ -2,11 +2,11 @@
 
 Este projeto foi desenvolvido para o processo seletivo da empresa Amo Promo, e consiste em um quadro kanban básico.
 
-Nele, foi utilizado o framework ReactJS com TypeScript, a biblioteca `styled-components` para definição dos estilos, além das bibliotecas react-modal` para a construção dos modais dos formulários, ...
-
-Aqui também utilizei ...
+Nele, foi utilizado o framework ReactJS com TypeScript, a biblioteca `styled-components` para definição dos estilos, além das bibliotecas `react-modal` para a construção dos modais dos formulários, ...
 
 O objetivo da aplicação é catalogar listas e cartões para orgnaizar tarefas, é possível adicionar/excluir/editar as listas e cartões além de organizar a ordem dos dois como for melhor para o usuário.
+
+Como não tenho back-end nessa aplicação para fazer a persisitência dos dados, fiz uma pequena lista de dados mockados para visualizar o funcionamento do quadro, e as modificações podem ser vistas pelo estado que fica salvo durante o uso da página.
 
 ## Rodando o projeto localmente
 

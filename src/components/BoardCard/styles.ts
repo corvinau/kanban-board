@@ -12,10 +12,10 @@ export const Container = styled.div`
 
   padding: 15px;
 
-  :hover {
+  /* :hover {
     box-shadow: inset 0em 0em 0em 10em rgba(0, 0, 0, 0.1);
     cursor: pointer;
-  }
+  } */
 
   .card-name {
     font-weight: 500;
@@ -26,5 +26,21 @@ export const Container = styled.div`
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  .card-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 14px;
+
+    .button-icon {
+      display: initial;
+      color: #212529;
+      font-size: 10px;
+      margin: 0;
+    }
   }
 `;
