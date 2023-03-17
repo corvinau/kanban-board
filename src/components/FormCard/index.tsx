@@ -50,11 +50,3 @@ const FormCard: React.FC = () => {
 };
 
 export default FormCard;
-
-// interface ICard {
-//   id: string;
-//   title: string;
-//   tag: ITag;
-//   description?: string;
-//   column: string;
-// }

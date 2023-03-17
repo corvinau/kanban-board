@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { Container } from './styles';
+import mockTags from '../../data/tags';
+import Tag from '../Tag';
+
+import { Container, TagContainer } from './styles';
 
 const FormTag: React.FC = () => {
   return (
@@ -22,13 +25,18 @@ const FormTag: React.FC = () => {
           <input type="color" id="color" name="colorTag" required />
         </div>
       </form>
+
+      <hr className="divider" />
+
+      <h2>Tags cadastradas</h2>
+
+      <TagContainer>
+        {mockTags.map(item => (
+          <Tag id={item.id} color={item.color} name={item.name} />
+        ))}
+      </TagContainer>
     </Container>
   );
 };
 
 export default FormTag;
-
-// interface ITag {
-//   name: string;
-//   color: string;
-// }

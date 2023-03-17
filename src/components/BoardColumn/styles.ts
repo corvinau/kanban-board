@@ -32,7 +32,7 @@ export const Container = styled.div`
     border-radius: 5px;
     color: #FFFFFF;
     background-color: ${props => (props.color ? props.color : '#afb6bd')};
-    margin: 20px 20px 0;
+    margin: 10px 20px 0px 20px;
 
     :hover {
       box-shadow: inset 0em 0em 0em 10em rgba(0, 0, 0, 0.3);

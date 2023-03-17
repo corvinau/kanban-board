@@ -3,6 +3,7 @@ const mockCards: ICard[] = [
     id: '1',
     title: 'Documentar padrões mobile',
     tag: {
+      id: '1',
       name: 'Tag 1',
       color: '#59D090'
     },
@@ -13,6 +14,7 @@ const mockCards: ICard[] = [
     id: '2',
     title: 'Ajustes fluxo de compra',
     tag: {
+      id: '1',
       name: 'Tag 1',
       color: '#59D090'
     },
@@ -23,6 +25,7 @@ const mockCards: ICard[] = [
     id: '3',
     title: 'Banners da home',
     tag: {
+      id: '1',
       name: 'Tag 1',
       color: '#59D090'
     },
@@ -33,6 +36,7 @@ const mockCards: ICard[] = [
     id: '4',
     title: 'Template de e-mail marketing',
     tag: {
+      id: '1',
       name: 'Tag 1',
       color: '#59D090'
     },
@@ -43,6 +47,7 @@ const mockCards: ICard[] = [
     id: '5',
     title: 'Wireframe das telas',
     tag: {
+      id: '2',
       name: 'Tag 2',
       color: '#5CC4FF'
     },
@@ -53,6 +58,7 @@ const mockCards: ICard[] = [
     id: '6',
     title: 'Implementação do blog',
     tag: {
+      id: '3',
       name: 'Tag 3',
       color: '#945AD1'
     },
@@ -63,6 +69,7 @@ const mockCards: ICard[] = [
     id: '7',
     title: 'Análise de métricas',
     tag: {
+      id: '3',
       name: 'Tag 3',
       color: '#945AD1'
     },
@@ -73,6 +80,7 @@ const mockCards: ICard[] = [
     id: '8',
     title: 'UX Review',
     tag: {
+      id: '3',
       name: 'Tag 3',
       color: '#945AD1'
     },

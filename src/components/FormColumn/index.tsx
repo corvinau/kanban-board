@@ -27,10 +27,3 @@ const FormColumn: React.FC = () => {
 };
 
 export default FormColumn;
-
-// interface IColumn {
-//   id: string;
-//   name: string;
-//   color: string;
-//   cards: string[];
-// }

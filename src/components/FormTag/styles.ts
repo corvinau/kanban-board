@@ -32,4 +32,21 @@ export const Container = styled.div`
       display: inline-block;
     }
   }
+
+  .divider {
+    margin: 20px 0;
+  }
+`;
+
+export const TagContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  div {
+    margin-right: 10px;
+
+    :last-child {
+      margin-right: 0;
+    }
+  }
 `;
