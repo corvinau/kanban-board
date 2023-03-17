@@ -36,8 +36,8 @@ const ModalPanel: React.FC<IModalProps> = ({ button, title, form }) => {
         className="modal-content"
       >
         <h2>{title}</h2>
-        <hr />
-        <div>{form}</div>
+        <hr className="divider" />
+        {form}
 
         <div className="modal-button">
           <button onClick={handleCloseModal}>Salvar</button>

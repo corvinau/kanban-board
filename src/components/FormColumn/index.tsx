@@ -5,9 +5,32 @@ import { Container } from './styles';
 const FormColumn: React.FC = () => {
   return (
     <Container>
-      <div>form column</div>
+      <form>
+        <div>
+          <label htmlFor="name">
+            <span>Nome da coluna:</span>
+            <span aria-label="required">*</span>
+          </label>
+          <input type="text" id="name" name="nameColumn" required />
+        </div>
+
+        <div>
+          <label htmlFor="color">
+            <span>Cor da coluna:</span>
+            <span aria-label="required">*</span>
+          </label>
+          <input type="color" id="color" name="colorColumn" required />
+        </div>
+      </form>
     </Container>
   );
 };
 
 export default FormColumn;
+
+// interface IColumn {
+//   id: string;
+//   name: string;
+//   color: string;
+//   cards: string[];
+// }
