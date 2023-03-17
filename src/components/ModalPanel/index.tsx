@@ -40,8 +40,10 @@ const ModalPanel: React.FC<IModalProps> = ({ button, title, form }) => {
         {form}
 
         <div className="modal-button">
-          <button onClick={handleCloseModal}>Salvar</button>
           <button onClick={handleCloseModal}>Fechar</button>
+          <button className="button-save" onClick={handleCloseModal}>
+            Salvar
+          </button>
         </div>
       </Modal>
     </div>

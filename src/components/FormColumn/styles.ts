@@ -6,7 +6,8 @@ export const Container = styled.div`
 
   form > div {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
 
     margin-bottom: 10px;
 
@@ -15,10 +16,8 @@ export const Container = styled.div`
     }
 
     label {
-      width: 200px;
       display: flex;
-      justify-content: flex-end;
-      margin-right: 10px;
+      justify-content: flex-start;
     }
 
     input {

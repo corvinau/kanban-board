@@ -30,7 +30,7 @@ const FormCard: React.FC = () => {
           <label htmlFor="description">
             <span>Descrição:</span>
           </label>
-          <textarea id="description" name="descriptionCard" rows={5} />
+          <textarea id="description" name="descriptionCard" rows={4} />
         </div>
 
         <div>
