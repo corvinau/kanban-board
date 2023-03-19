@@ -13,17 +13,17 @@ import FormCard from '../FormCard';
 import { Container } from './styles';
 
 const BoardColumn: React.FC<IColumn> = data => {
-  const handleOpenPanel = () => {
-    console.log('clicou');
-  };
+  // const handleOpenPanel = () => {
+  //   console.log('clicou');
+  // };
 
-  const handleEditColumn = () => {
-    console.log('clicou');
-  };
+  // const handleEditColumn = () => {
+  //   console.log('clicou');
+  // };
 
-  const handleDeleteColumn = () => {
-    console.log('clicou');
-  };
+  // const handleDeleteColumn = () => {
+  //   console.log('clicou');
+  // };
 
   return (
     <Container color={data.color}>
@@ -36,7 +36,7 @@ const BoardColumn: React.FC<IColumn> = data => {
                 <div
                   className="column-action-button"
                   role="button"
-                  onClick={handleEditColumn}
+                  // onClick={handleEditColumn}
                 >
                   <div className="button-icon">
                     <FaRegEdit />
@@ -52,7 +52,7 @@ const BoardColumn: React.FC<IColumn> = data => {
                 <div
                   className="column-action-button"
                   role="button"
-                  onClick={handleDeleteColumn}
+                  // onClick={handleDeleteColumn}
                 >
                   <div className="button-icon">
                     <FaRegTrashAlt />
@@ -87,7 +87,7 @@ const BoardColumn: React.FC<IColumn> = data => {
             <div
               className="column-button"
               role="button"
-              onClick={handleOpenPanel}
+              // onClick={handleOpenPanel}
             >
               <div className="button-icon">
                 <FaPlus />

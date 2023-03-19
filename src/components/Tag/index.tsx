@@ -4,7 +4,7 @@ import { Container } from './styles';
 
 const Tag: React.FC<ITag> = data => {
   return (
-    <Container color={data.color}>
+    <Container id={data.id} color={data.color}>
       {data.name !== '' ? data.name : '-'}
     </Container>
   );

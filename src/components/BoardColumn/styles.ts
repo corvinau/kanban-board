@@ -30,9 +30,9 @@ export const Container = styled.div`
   }
 
   .column-card {
-    overflow: auto;
+    overflow: hidden auto;
     max-height: calc(100vh - 325px);
-    margin: 0px 20px;
+    margin: 0 15px 0 20px
   }
 
   .column-action-button,

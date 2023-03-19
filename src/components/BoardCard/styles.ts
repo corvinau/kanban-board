@@ -12,6 +12,10 @@ export const Container = styled.div`
 
   padding: 15px;
 
+  :last-child {
+    margin-bottom: 0;
+  }
+
   /* :hover {
     box-shadow: inset 0em 0em 0em 10em rgba(0, 0, 0, 0.1);
     cursor: pointer;

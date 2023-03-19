@@ -1,7 +1,7 @@
 const mockCards: ICard[] = [
   {
     id: '1',
-    title: 'Documentar padrões mobile',
+    title: 'Documentar padrões mobile bla bla bla bla bla bla bla',
     tag: {
       id: '1',
       name: 'Tag 1',

@@ -32,7 +32,7 @@ const FormTag: React.FC = () => {
 
       <TagContainer>
         {mockTags.map(item => (
-          <Tag id={item.id} color={item.color} name={item.name} />
+          <Tag key={item.id} id={item.id} color={item.color} name={item.name} />
         ))}
       </TagContainer>
     </Container>

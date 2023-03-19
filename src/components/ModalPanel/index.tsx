@@ -30,10 +30,10 @@ const ModalPanel: React.FC<IModalProps> = ({
     setIsOpen(false);
   };
 
-  const handleDeleteCard = () => {
-    console.log('clicou');
-    // handleCloseModal();
-  };
+  // const handleDeleteCard = () => {
+  //   console.log('clicou');
+  //   handleCloseModal();
+  // };
 
   return (
     <div>
@@ -65,7 +65,9 @@ const ModalPanel: React.FC<IModalProps> = ({
             {action === 'edit' ? (
               <ModalPanel
                 button={
-                  <button onClick={handleDeleteCard}>
+                  <button
+                  // onClick={handleDeleteCard}
+                  >
                     <FaRegTrashAlt />
                   </button>
                 }
@@ -99,7 +101,7 @@ const ModalPanel: React.FC<IModalProps> = ({
             {form}
 
             <div className="modal-button">
-              <button onClick={handleCloseModal}>Fechar</button>
+              <button onClick={handleCloseModal}>Cancelar</button>
               <button className="button-save" onClick={handleCloseModal}>
                 Salvar
               </button>
