@@ -51,7 +51,7 @@ export const Container = styled.div`
   }
 
   .column-button {
-    margin: 10px 20px 0px 20px;
+    margin: 15px 20px 0px;
   }
 
   .button-icon {

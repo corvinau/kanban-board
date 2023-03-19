@@ -1,11 +1,23 @@
 import React from 'react';
 
 import mockTags from '../../data/tags';
+
+import { FaRegEdit, FaRegTrashAlt } from 'react-icons/fa';
+
 import Tag from '../Tag';
+import ModalPanel from '../ModalPanel';
 
 import { Container, TagContainer } from './styles';
 
 const FormTag: React.FC = () => {
+  // const handleEditTag = () => {
+  //   console.log('clicou');
+  // };
+
+  // const handleDeleteTag = () => {
+  //   console.log('clicou');
+  // };
+
   return (
     <Container>
       <form>
@@ -32,7 +44,35 @@ const FormTag: React.FC = () => {
 
       <TagContainer>
         {mockTags.map(item => (
-          <Tag key={item.id} id={item.id} color={item.color} name={item.name} />
+          <div className="list-tags" key={item.id}>
+            <Tag id={item.id} color={item.color} name={item.name} />
+
+            <div
+              className="column-action-button"
+              role="button"
+              // onClick={handleEditTag}
+            >
+              <div className="button-icon">
+                <FaRegEdit />
+              </div>
+            </div>
+
+            <ModalPanel
+              button={
+                <div
+                  className="column-action-button"
+                  role="button"
+                  // onClick={handleDeleteTag}
+                >
+                  <div className="button-icon">
+                    <FaRegTrashAlt />
+                  </div>
+                </div>
+              }
+              title="Excluir tag?"
+              action="delete"
+            />
+          </div>
         ))}
       </TagContainer>
     </Container>

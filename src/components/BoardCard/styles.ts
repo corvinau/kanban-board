@@ -40,6 +40,16 @@ export const Container = styled.div`
 
     font-size: 14px;
 
+    .card-action-button {
+      cursor: pointer;
+      padding: 0 5px;
+      border-radius: 5px;
+
+      :hover {
+        box-shadow: inset 0em 0em 0em 10em rgba(0, 0, 0, 0.15);
+      }
+    }
+
     .button-icon {
       display: initial;
       color: #212529;

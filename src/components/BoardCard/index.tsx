@@ -18,7 +18,7 @@ const BoardCard: React.FC<ICard> = data => {
 
         <ModalPanel
           button={
-            <div>
+            <div className="card-action-button">
               <div className="button-icon">
                 <FaPlus />
               </div>{' '}

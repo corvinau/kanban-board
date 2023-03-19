@@ -40,13 +40,53 @@ export const Container = styled.div`
 
 export const TagContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
 
-  div {
+  max-height: 250px;;
+  overflow: auto;
+
+  .list-tags {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-right: 30px;
+    margin-bottom: 5px;
+
+    div {
+      margin-right: 10px;
+    }
+  }
+
+  .column-action-button {
+    display: flex;
+    align-items: center;
+
+    border-radius: 5px;
+    border: 1px solid #afb6bd;
+
     margin-right: 10px;
 
     :last-child {
       margin-right: 0;
     }
+
+    :hover {
+      box-shadow: inset 0em 0em 0em 10em rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+  }
+
+  .button-icon {
+    display: flex;
+    align-items: center;
+
+    font-weight: 500;
+    font-size: 16px;
+    color: #212529;
+
+    margin: 8px;
   }
 `;

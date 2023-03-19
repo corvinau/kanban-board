@@ -41,6 +41,10 @@
 }
 
 @media (max-width: 800px) {
+  .app {
+    padding: 40px 30px;
+  }
+
   .app-body {
     background-size: contain;
   }
