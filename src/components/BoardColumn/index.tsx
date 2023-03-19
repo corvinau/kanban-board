@@ -7,6 +7,7 @@ import { FaPlus, FaRegEdit, FaRegTrashAlt } from 'react-icons/fa';
 import BoardCard from '../BoardCard';
 import BoardCardEmpty from '../BoardCardEmpty';
 import ModalPanel from '../ModalPanel';
+import FormColumn from '../FormColumn';
 import FormCard from '../FormCard';
 
 import { Container } from './styles';
@@ -16,11 +17,11 @@ const BoardColumn: React.FC<IColumn> = data => {
     console.log('clicou');
   };
 
-  const handleEditCard = () => {
+  const handleEditColumn = () => {
     console.log('clicou');
   };
 
-  const handleDeleteCard = () => {
+  const handleDeleteColumn = () => {
     console.log('clicou');
   };
 
@@ -30,25 +31,37 @@ const BoardColumn: React.FC<IColumn> = data => {
         <div className="column-header">
           <div className="column-name">{data.name}</div>
           <div className="column-actions">
-            <div
-              className="column-action-button"
-              role="button"
-              onClick={handleEditCard}
-            >
-              <div className="button-icon">
-                <FaRegEdit />
-              </div>
-            </div>
+            <ModalPanel
+              button={
+                <div
+                  className="column-action-button"
+                  role="button"
+                  onClick={handleEditColumn}
+                >
+                  <div className="button-icon">
+                    <FaRegEdit />
+                  </div>
+                </div>
+              }
+              title="Editar lista"
+              form={<FormColumn />}
+            />
 
-            <div
-              className="column-action-button"
-              role="button"
-              onClick={handleDeleteCard}
-            >
-              <div className="button-icon">
-                <FaRegTrashAlt />
-              </div>
-            </div>
+            <ModalPanel
+              button={
+                <div
+                  className="column-action-button"
+                  role="button"
+                  onClick={handleDeleteColumn}
+                >
+                  <div className="button-icon">
+                    <FaRegTrashAlt />
+                  </div>
+                </div>
+              }
+              title="Excluir lista?"
+              action="delete"
+            />
           </div>
         </div>
         <div className="column-card">

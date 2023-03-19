@@ -10,8 +10,8 @@ Modal.setAppElement('#root');
 interface IModalProps {
   button: React.ReactNode;
   title: string;
-  form: React.ReactNode;
-  action?: 'new' | 'edit';
+  form?: React.ReactNode;
+  action?: 'new' | 'edit' | 'delete';
 }
 
 const ModalPanel: React.FC<IModalProps> = ({
@@ -30,6 +30,11 @@ const ModalPanel: React.FC<IModalProps> = ({
     setIsOpen(false);
   };
 
+  const handleDeleteCard = () => {
+    console.log('clicou');
+    // handleCloseModal();
+  };
+
   return (
     <div>
       <div
@@ -45,30 +50,62 @@ const ModalPanel: React.FC<IModalProps> = ({
         onRequestClose={handleCloseModal}
         contentLabel={title}
         overlayClassName="modal-overlay"
-        className="modal-content"
+        className={
+          action === 'delete' ? 'modal-content-delete' : 'modal-content'
+        }
       >
-        <div className="modal-header">
-          <h2>{title}</h2>
+        {action === 'delete' ? (
+          <div className="modal-header-delete">
+            <h1>{title}</h1>
+          </div>
+        ) : (
+          <div className="modal-header">
+            <h2>{title}</h2>
 
-          {action === 'edit' ? (
-            <button onClick={handleCloseModal}>
-              <FaRegTrashAlt />
-            </button>
-          ) : (
-            <></>
-          )}
-        </div>
+            {action === 'edit' ? (
+              <ModalPanel
+                button={
+                  <button onClick={handleDeleteCard}>
+                    <FaRegTrashAlt />
+                  </button>
+                }
+                title="Excluir cartão?"
+                action="delete"
+              />
+            ) : (
+              <></>
+            )}
+          </div>
+        )}
 
-        <hr className="divider" />
+        {action === 'delete' ? (
+          <>
+            <div className="modal-button-delete">
+              <button className="button-delete" onClick={handleCloseModal}>
+                Cancelar
+              </button>
+              <button
+                className="button-confirm-delete"
+                onClick={handleCloseModal}
+              >
+                Excluir
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+            <hr className="divider" />
 
-        {form}
+            {form}
 
-        <div className="modal-button">
-          <button onClick={handleCloseModal}>Fechar</button>
-          <button className="button-save" onClick={handleCloseModal}>
-            Salvar
-          </button>
-        </div>
+            <div className="modal-button">
+              <button onClick={handleCloseModal}>Fechar</button>
+              <button className="button-save" onClick={handleCloseModal}>
+                Salvar
+              </button>
+            </div>
+          </>
+        )}
       </Modal>
     </div>
   );

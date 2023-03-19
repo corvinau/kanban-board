@@ -62,7 +62,7 @@ export const Container = styled.div`
     font-size: 16px;
     color: #FFFFFF;
 
-    margin: 0 10px;
+    margin: 10px;
   }
 
   .button-name {
