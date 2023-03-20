@@ -1,5 +1,8 @@
 import React from 'react';
 
+import mockTags from '../../data/tags';
+import mockColumns from '../../data/columns';
+
 import { Container } from './styles';
 
 const FormCard: React.FC = () => {
@@ -20,9 +23,9 @@ const FormCard: React.FC = () => {
             <span aria-label="required">*</span>
           </label>
           <select id="tag" name="tagCard" required>
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
+            {mockTags.map(item => (
+              <option value={item.id}>{item.name}</option>
+            ))}
           </select>
         </div>
 
@@ -39,9 +42,9 @@ const FormCard: React.FC = () => {
             <span aria-label="required">*</span>
           </label>
           <select id="column" name="columnCard" required>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
+            {mockColumns.map(item => (
+              <option value={item.id}>{item.name}</option>
+            ))}
           </select>
         </div>
       </form>
