@@ -8,13 +8,17 @@ import FormCard from '../FormCard';
 
 import { Container } from './styles';
 
-const BoardCard: React.FC<ICard> = data => {
+interface ICardProps {
+  card: ICard;
+}
+
+const BoardCard: React.FC<ICardProps> = ({ card }) => {
   return (
     <Container>
-      <div className="card-name">{data.title}</div>
+      <div className="card-name">{card.title}</div>
 
       <div className="card-button">
-        <Tag id={data.tag.id} color={data.tag.color} name={data.tag.name} />
+        <Tag tags={card.tag} />
 
         <ModalPanel
           button={

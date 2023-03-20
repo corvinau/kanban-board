@@ -14,13 +14,7 @@ const Dashboard: React.FC = () => {
   return (
     <Container>
       {moockColumns.map(item => (
-        <BoardColumn
-          key={item.id}
-          id={item.id}
-          name={item.name}
-          color={item.color}
-          cards={item.cards}
-        />
+        <BoardColumn key={item.id} columns={item} />
       ))}
 
       <div className="button-columns">

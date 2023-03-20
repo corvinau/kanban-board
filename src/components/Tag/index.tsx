@@ -2,10 +2,14 @@ import React from 'react';
 
 import { Container } from './styles';
 
-const Tag: React.FC<ITag> = data => {
+interface ITagProps {
+  tags: ITag;
+}
+
+const Tag: React.FC<ITagProps> = ({ tags }) => {
   return (
-    <Container id={data.id} color={data.color}>
-      {data.name !== '' ? data.name : '-'}
+    <Container id={tags.id} color={tags.color}>
+      {tags.name !== '' ? tags.name : '-'}
     </Container>
   );
 };

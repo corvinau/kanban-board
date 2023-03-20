@@ -45,7 +45,7 @@ const FormTag: React.FC = () => {
       <TagContainer>
         {mockTags.map(item => (
           <div className="list-tags" key={item.id}>
-            <Tag id={item.id} color={item.color} name={item.name} />
+            <Tag tags={item} />
 
             <div
               className="column-action-button"

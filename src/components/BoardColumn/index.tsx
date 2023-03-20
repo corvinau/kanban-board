@@ -12,7 +12,11 @@ import FormCard from '../FormCard';
 
 import { Container } from './styles';
 
-const BoardColumn: React.FC<IColumn> = data => {
+interface IColumnProps {
+  columns: IColumn;
+}
+
+const BoardColumn: React.FC<IColumnProps> = ({ columns }) => {
   // const handleOpenPanel = () => {
   //   console.log('clicou');
   // };
@@ -26,10 +30,10 @@ const BoardColumn: React.FC<IColumn> = data => {
   // };
 
   return (
-    <Container color={data.color}>
-      <div key={data.id}>
+    <Container color={columns.color}>
+      <div key={columns.id}>
         <div className="column-header">
-          <div className="column-name">{data.name}</div>
+          <div className="column-name">{columns.name}</div>
           <div className="column-actions">
             <ModalPanel
               button={
@@ -65,19 +69,10 @@ const BoardColumn: React.FC<IColumn> = data => {
           </div>
         </div>
         <div className="column-card">
-          {data.cards.length !== 0 ? (
+          {columns.cards.length !== 0 ? (
             mockCards
-              .filter(item => item.column === data.id)
-              .map(item => (
-                <BoardCard
-                  key={item.id}
-                  id={item.id}
-                  title={item.title}
-                  tag={item.tag}
-                  description={item.description}
-                  column={item.column}
-                />
-              ))
+              .filter(item => item.column === columns.id)
+              .map((item: ICard) => <BoardCard key={item.id} card={item} />)
           ) : (
             <BoardCardEmpty />
           )}
