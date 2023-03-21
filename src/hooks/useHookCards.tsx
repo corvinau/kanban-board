@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import mockCards from '../data/cards';
-
 import { v4 as uuidv4 } from 'uuid';
+
+import mockCards from '../data/cards';
 
 export const useHookCards = () => {
   const [uuidCard, setUuidCard] = useState('');
@@ -51,6 +51,17 @@ export const useHookCards = () => {
   //   setNewCards(items.filter(item => item.id !== cardId));
   // };
 
+  function handleOnDragEnd(result: any) {
+    if (!result.destination) return;
+
+    const items = Array.from(newCards);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+
+    setNewCards(items);
+  }
+  console.log(newCards);
+
   useEffect(() => {
     setNewCards([...mockCards]);
   }, []);
@@ -72,5 +83,6 @@ export const useHookCards = () => {
     // handleClickUpdateCard,
     handleSubmitCard,
     // handleDeleteCard,
+    handleOnDragEnd,
   };
 };

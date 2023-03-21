@@ -1,4 +1,5 @@
 import React from 'react';
+// import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 import mockTags from '../../data/tags';
 
@@ -9,13 +10,29 @@ import ModalPanel from '../ModalPanel';
 
 import { Container, ContainerFormCard } from './styles';
 
+// import { useHookCards } from '../../hooks/useHookCards';
+
 interface ICardProps {
   card: ICard;
+  index: number;
 }
 
-const BoardCard: React.FC<ICardProps> = ({ card }) => {
+const BoardCard: React.FC<ICardProps> = ({ card, index }) => {
+  // const { handleOnDragEnd } = useHookCards();
+
   return (
+    // <DragDropContext onDragEnd={handleOnDragEnd}>
+    //   <Droppable droppableId={card.id}>
+    //     {provided => (
+    //       <div {...provided.droppableProps} ref={provided.innerRef}>
     <Container>
+      {/* <Draggable key={card.id} draggableId={card.id} index={index}>
+                {provided => (
+                  <div
+                    ref={provided.innerRef}
+                    {...provided.draggableProps}
+                    {...provided.dragHandleProps}
+                  > */}
       <div className="card-name">{card.title}</div>
 
       <div className="card-button">
@@ -104,7 +121,15 @@ const BoardCard: React.FC<ICardProps> = ({ card }) => {
           }
         />
       </div>
+      {/* </div>
+                )}
+              </Draggable> */}
     </Container>
+    //         {provided.placeholder}
+    //       </div>
+    //     )}
+    //   </Droppable>
+    // </DragDropContext>
   );
 };
 

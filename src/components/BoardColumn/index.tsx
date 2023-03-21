@@ -1,4 +1,5 @@
 import React from 'react';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 import mockTags from '../../data/tags';
 
@@ -38,124 +39,159 @@ const BoardColumn: React.FC = () => {
     newCards,
     handleClickSaveCard,
     handleSubmitCard,
+    handleOnDragEnd,
   } = useHookCards();
 
   return (
     <>
-      {newColumns.map(column => (
-        <Container key={column.id} color={column.color}>
-          <div key={column.id}>
-            <div className="column-header">
-              <div className="column-name">{column.name}</div>
-            </div>
+      <DragDropContext onDragEnd={handleOnDragEnd}>
+        {newColumns.map(column => (
+          <Droppable key={column.id} droppableId={column.id}>
+            {provided => (
+              <div {...provided.droppableProps} ref={provided.innerRef}>
+                <Container key={column.id} color={column.color}>
+                  <div key={column.id}>
+                    <div className="column-header">
+                      <div className="column-name">{column.name}</div>
+                    </div>
 
-            <div className="column-card">
-              {column.cards.length !== 0 ? (
-                newCards
-                  .filter(item => item.column === column.id)
-                  .map((item: ICard) => <BoardCard key={item.id} card={item} />)
-              ) : (
-                <BoardCardEmpty />
-              )}
-            </div>
+                    <div className="column-card">
+                      {column.cards.length !== 0 ? (
+                        newCards
+                          .filter(item => item.column === column.id)
+                          .map((item: ICard, index: number) => (
+                            <Draggable
+                              key={item.id}
+                              draggableId={item.id}
+                              index={index}
+                            >
+                              {provided => (
+                                <div
+                                  ref={provided.innerRef}
+                                  {...provided.draggableProps}
+                                  {...provided.dragHandleProps}
+                                >
+                                  <BoardCard
+                                    key={item.id}
+                                    card={item}
+                                    index={index}
+                                  />
+                                </div>
+                              )}
+                            </Draggable>
+                          ))
+                      ) : (
+                        <BoardCardEmpty />
+                      )}
+                    </div>
 
-            <ModalPanel
-              button={
-                <div className="column-button" role="button">
-                  <div className="button-icon">
-                    <FaPlus />
+                    {provided.placeholder}
+
+                    <ModalPanel
+                      button={
+                        <div className="column-button" role="button">
+                          <div className="button-icon">
+                            <FaPlus />
+                          </div>
+                          <div className="button-name">
+                            Adicionar novo cartão
+                          </div>
+                        </div>
+                      }
+                      title="Adicionar novo cartão"
+                      form={
+                        <ContainerFormCard>
+                          <form onSubmit={handleSubmitCard}>
+                            <input
+                              type="text"
+                              id="id"
+                              name="idCard"
+                              value={uuidCard}
+                              hidden
+                              readOnly
+                            />
+
+                            <input
+                              type="text"
+                              id="id"
+                              name="idColumn"
+                              value={columnCard}
+                              hidden
+                              readOnly
+                            />
+
+                            <div>
+                              <label htmlFor="title">
+                                <span>Título:</span>
+                                <span aria-label="required">*</span>
+                              </label>
+                              <input
+                                type="text"
+                                id="title"
+                                name="titleCard"
+                                value={titleCard}
+                                onChange={e => setTitleCard(e.target.value)}
+                                required
+                              />
+                            </div>
+
+                            <div>
+                              <label htmlFor="tag">
+                                <span>Tag:</span>
+                                <span aria-label="required">*</span>
+                              </label>
+                              <select
+                                id="tag"
+                                name="tagCard"
+                                value={tagCard}
+                                onChange={e => setTagCard(e.target.value)}
+                                required
+                              >
+                                <option key="0" value="" disabled hidden>
+                                  Selecione uma tag
+                                </option>
+                                {mockTags.map(item => (
+                                  <option key={item.id} value={item.id}>
+                                    {item.name}
+                                  </option>
+                                ))}
+                              </select>
+                            </div>
+
+                            <div>
+                              <label htmlFor="description">
+                                <span>Descrição:</span>
+                              </label>
+                              <textarea
+                                id="description"
+                                name="descriptionCard"
+                                value={descriptionCard}
+                                onChange={e =>
+                                  setDescriptionCard(e.target.value)
+                                }
+                                rows={4}
+                              />
+                            </div>
+
+                            <div className="button-save">
+                              <button
+                                type="submit"
+                                onClick={() => handleClickSaveCard(column.id)}
+                              >
+                                Salvar
+                              </button>
+                            </div>
+                          </form>
+                        </ContainerFormCard>
+                      }
+                    />
                   </div>
-                  <div className="button-name">Adicionar novo cartão</div>
-                </div>
-              }
-              title="Adicionar novo cartão"
-              form={
-                <ContainerFormCard>
-                  <form onSubmit={handleSubmitCard}>
-                    <input
-                      type="text"
-                      id="id"
-                      name="idCard"
-                      value={uuidCard}
-                      hidden
-                      readOnly
-                    />
-
-                    <input
-                      type="text"
-                      id="id"
-                      name="idColumn"
-                      value={columnCard}
-                      hidden
-                      readOnly
-                    />
-
-                    <div>
-                      <label htmlFor="title">
-                        <span>Título:</span>
-                        <span aria-label="required">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        id="title"
-                        name="titleCard"
-                        value={titleCard}
-                        onChange={e => setTitleCard(e.target.value)}
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="tag">
-                        <span>Tag:</span>
-                        <span aria-label="required">*</span>
-                      </label>
-                      <select
-                        id="tag"
-                        name="tagCard"
-                        value={tagCard}
-                        onChange={e => setTagCard(e.target.value)}
-                        required
-                      >
-                        <option key="0" value="" disabled hidden>
-                          Selecione uma tag
-                        </option>
-                        {mockTags.map(item => (
-                          <option key={item.id} value={item.id}>
-                            {item.name}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-
-                    <div>
-                      <label htmlFor="description">
-                        <span>Descrição:</span>
-                      </label>
-                      <textarea
-                        id="description"
-                        name="descriptionCard"
-                        value={descriptionCard}
-                        onChange={e => setDescriptionCard(e.target.value)}
-                        rows={4}
-                      />
-                    </div>
-
-                    <div className="button-save">
-                      <button
-                        type="submit"
-                        onClick={() => handleClickSaveCard(column.id)}
-                      >
-                        Salvar
-                      </button>
-                    </div>
-                  </form>
-                </ContainerFormCard>
-              }
-            />
-          </div>
-        </Container>
-      ))}
+                </Container>
+              </div>
+            )}
+          </Droppable>
+        ))}
+      </DragDropContext>
 
       <ModalPanel
         button={<BoardColumnButton name={'Adicionar nova lista'} />}
