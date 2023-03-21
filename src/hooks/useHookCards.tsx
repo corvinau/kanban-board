@@ -11,12 +11,19 @@ export const useHookCards = () => {
   const [tagCard, setTagCard] = useState('');
   const [descriptionCard, setDescriptionCard] = useState('');
   const [newCards, setNewCards] = useState([] as ICard[]);
-  console.log(newCards);
 
   const handleClickSaveCard = (columnsId: string) => {
     setUuidCard(uuidv4());
     setColumnCard(columnsId);
   };
+
+  // const handleClickUpdateCard = (card: ICard) => {
+  //   setUuidCard(card.id);
+  //   setColumnCard(card.column);
+  //   setTitleCard(card.title);
+  //   setTagCard(card.tag);
+  //   setDescriptionCard(card.description);
+  // };
 
   const handleSubmitCard = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -39,6 +46,11 @@ export const useHookCards = () => {
     setDescriptionCard('');
   };
 
+  // const handleDeleteCard = (cardId: string) => {
+  //   const items = newCards;
+  //   setNewCards(items.filter(item => item.id !== cardId));
+  // };
+
   useEffect(() => {
     setNewCards([...mockCards]);
   }, []);
@@ -57,6 +69,8 @@ export const useHookCards = () => {
     newCards,
     setNewCards,
     handleClickSaveCard,
+    // handleClickUpdateCard,
     handleSubmitCard,
+    // handleDeleteCard,
   };
 };

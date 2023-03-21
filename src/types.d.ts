@@ -8,7 +8,7 @@ interface ICard {
   id: string;
   title: string;
   tag: string;
-  description?: string;
+  description: string;
   column: string;
 }
 

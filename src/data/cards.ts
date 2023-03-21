@@ -3,7 +3,7 @@ const mockCards: ICard[] = [
     id: '68f9ad82-d65f-409c-a7da-13ee85fdd5e0',
     title: 'Documentar padrões mobile bla bla bla bla bla bla bla',
     tag: 'b5297d1c-6d38-45eb-a2cd-ba7dfec1e77a',
-    description: '',
+    description: 'teste',
     column: '8189f10c-6a2c-4fc6-868b-845a4ad71b27',
   },
   {

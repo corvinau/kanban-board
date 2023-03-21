@@ -24,6 +24,7 @@ export const Container = styled.div`
   .card-name {
     font-weight: 500;
     font-size: 16px;
+    margin-bottom: 15px;
 
     display: -webkit-box;
     -webkit-line-clamp: 1;
@@ -31,8 +32,7 @@ export const Container = styled.div`
     overflow: hidden;
   }
 
-  .card-button,
-  .card-header {
+  .card-button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -50,26 +50,92 @@ export const Container = styled.div`
       }
     }
 
-    .button-icon,
-    .button-icon-header {
+    .button-icon {
       display: initial;
       color: #212529;
       font-size: 10px;
       margin: 0;
     }
   }
+`;
 
-  .card-header {
-    margin-bottom: 15px;
+export const ContainerFormCard = styled.div`
+  display: flex;
+  flex-direction: column;
 
-    .button-icon-header {
-      font-size: 14px;
-      margin: 2px;
+  form > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
-      > svg {
-        margin-top: 7px;
-      }
+    margin-bottom: 10px;
+
+    :last-child {
+      margin-bottom: 0;
     }
 
+    label {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      border: 1px solid #8a8a8a;
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 16px;
+      box-sizing: border-box;
+      min-height: 40px;
+      background-color: #ffffff;
+      display: inline-block;
+    }
+
+    textarea {
+      height: auto;
+    }
+
+    select {
+      margin: 0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      background-image:
+        linear-gradient(45deg, transparent 50%, gray 50%),
+        linear-gradient(135deg, gray 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+      background-position:
+        calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px),
+        calc(100% - 2.5em) 0.5em;
+      background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+      background-repeat: no-repeat;
+    }
+
+    select,
+    select option {
+      color: #212529;
+    }
+
+    select:invalid,
+    select option[value=""] {
+      color: #999999;
+    }
+
+    [hidden] {
+      display: none;
+    }
+  }
+
+  .button-save {
+    margin-top: 20px;
+    display: flex;
+    float: right;
   }
 `;
