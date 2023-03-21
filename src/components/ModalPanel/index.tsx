@@ -13,15 +13,9 @@ interface IModalProps {
   button: React.ReactNode;
   title: string;
   form?: React.ReactNode;
-  action?: 'new' | 'edit';
 }
 
-const ModalPanel: React.FC<IModalProps> = ({
-  button,
-  title,
-  form,
-  action = 'new',
-}) => {
+const ModalPanel: React.FC<IModalProps> = ({ button, title, form }) => {
   const { modalIsOpen, handleOpenModal, handleCloseModal } = useHookModal();
 
   return (

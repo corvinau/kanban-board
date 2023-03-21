@@ -1,18 +1,18 @@
 import React from 'react';
 
-import mockCards from '../../data/cards';
+import mockTags from '../../data/tags';
 
 import { FaPlus } from 'react-icons/fa';
 
 import BoardCard from '../BoardCard';
 import BoardCardEmpty from '../BoardCardEmpty';
 import ModalPanel from '../ModalPanel';
-import FormCard from '../FormCard';
 import BoardColumnButton from '../BoardColumnButton';
 
-import { Container, ContainerFormColumn } from './styles';
+import { Container, ContainerFormColumn, ContainerFormCard } from './styles';
 
 import { useHookColumns } from '../../hooks/useHookColumns';
+import { useHookCards } from '../../hooks/useHookCards';
 
 const BoardColumn: React.FC = () => {
   const {
@@ -22,9 +22,23 @@ const BoardColumn: React.FC = () => {
     colorColumn,
     setColorColumn,
     newColumns,
-    handleClick,
-    handleSubmit,
+    handleClickSaveColumn,
+    handleSubmitColumn,
   } = useHookColumns();
+
+  const {
+    uuidCard,
+    columnCard,
+    titleCard,
+    setTitleCard,
+    tagCard,
+    setTagCard,
+    descriptionCard,
+    setDescriptionCard,
+    newCards,
+    handleClickSaveCard,
+    handleSubmitCard,
+  } = useHookCards();
 
   return (
     <>
@@ -37,7 +51,7 @@ const BoardColumn: React.FC = () => {
 
             <div className="column-card">
               {column.cards.length !== 0 ? (
-                mockCards
+                newCards
                   .filter(item => item.column === column.id)
                   .map((item: ICard) => <BoardCard key={item.id} card={item} />)
               ) : (
@@ -55,7 +69,89 @@ const BoardColumn: React.FC = () => {
                 </div>
               }
               title="Adicionar novo cartão"
-              form={<FormCard />}
+              form={
+                <ContainerFormCard>
+                  <form onSubmit={handleSubmitCard}>
+                    <input
+                      type="text"
+                      id="id"
+                      name="idCard"
+                      value={uuidCard}
+                      hidden
+                      readOnly
+                    />
+
+                    <input
+                      type="text"
+                      id="id"
+                      name="idColumn"
+                      value={columnCard}
+                      hidden
+                      readOnly
+                    />
+
+                    <div>
+                      <label htmlFor="title">
+                        <span>Título:</span>
+                        <span aria-label="required">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="title"
+                        name="titleCard"
+                        value={titleCard}
+                        onChange={e => setTitleCard(e.target.value)}
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="tag">
+                        <span>Tag:</span>
+                        <span aria-label="required">*</span>
+                      </label>
+                      <select
+                        id="tag"
+                        name="tagCard"
+                        value={tagCard}
+                        onChange={e => setTagCard(e.target.value)}
+                        required
+                      >
+                        <option key="0" value="" disabled hidden>
+                          Selecione uma tag
+                        </option>
+                        {mockTags.map(item => (
+                          <option key={item.id} value={item.id}>
+                            {item.name}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="description">
+                        <span>Descrição:</span>
+                      </label>
+                      <textarea
+                        id="description"
+                        name="descriptionCard"
+                        value={descriptionCard}
+                        onChange={e => setDescriptionCard(e.target.value)}
+                        rows={4}
+                      />
+                    </div>
+
+                    <div className="button-save">
+                      <button
+                        type="submit"
+                        onClick={() => handleClickSaveCard(column.id)}
+                      >
+                        Salvar
+                      </button>
+                    </div>
+                  </form>
+                </ContainerFormCard>
+              }
             />
           </div>
         </Container>
@@ -66,11 +162,11 @@ const BoardColumn: React.FC = () => {
         title="Adicionar nova lista"
         form={
           <ContainerFormColumn>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmitColumn}>
               <input
                 type="text"
                 id="id"
-                name="idTag"
+                name="idColumn"
                 value={uuid}
                 hidden
                 readOnly
@@ -107,7 +203,7 @@ const BoardColumn: React.FC = () => {
               </div>
 
               <div className="button-save">
-                <button type="submit" onClick={handleClick}>
+                <button type="submit" onClick={handleClickSaveColumn}>
                   Salvar
                 </button>
               </div>

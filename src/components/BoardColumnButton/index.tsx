@@ -9,17 +9,9 @@ interface IButtonProps {
 }
 
 const BoardColumnButton: React.FC<IButtonProps> = ({ name }) => {
-  // const handleOpenPanel = () => {
-  //   console.log('clicou');
-  // };
-
   return (
     <Container>
-      <div
-        className="column-button"
-        role="button"
-        // onClick={handleOpenPanel}
-      >
+      <div className="column-button" role="button">
         <div className="button-icon">
           <FaPlus />
         </div>

@@ -9,13 +9,12 @@ export const useHookColumns = () => {
   const [nameColumn, setNameColumn] = useState('');
   const [colorColumn, setColorColumn] = useState('');
   const [newColumns, setNewColumns] = useState([] as IColumn[]);
-  console.log(newColumns);
 
-  const handleClick = () => {
+  const handleClickSaveColumn = () => {
     setUuid(uuidv4());
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmitColumn = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setNewColumns([
@@ -46,7 +45,7 @@ export const useHookColumns = () => {
     setColorColumn,
     newColumns,
     setNewColumns,
-    handleClick,
-    handleSubmit,
+    handleClickSaveColumn,
+    handleSubmitColumn,
   };
 };

@@ -7,7 +7,7 @@ interface ITag {
 interface ICard {
   id: string;
   title: string;
-  tag: ITag;
+  tag: string;
   description?: string;
   column: string;
 }

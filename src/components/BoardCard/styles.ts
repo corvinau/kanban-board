@@ -24,7 +24,6 @@ export const Container = styled.div`
   .card-name {
     font-weight: 500;
     font-size: 16px;
-    margin-bottom: 15px;
 
     display: -webkit-box;
     -webkit-line-clamp: 1;
@@ -32,7 +31,8 @@ export const Container = styled.div`
     overflow: hidden;
   }
 
-  .card-button {
+  .card-button,
+  .card-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -50,11 +50,26 @@ export const Container = styled.div`
       }
     }
 
-    .button-icon {
+    .button-icon,
+    .button-icon-header {
       display: initial;
       color: #212529;
       font-size: 10px;
       margin: 0;
     }
+  }
+
+  .card-header {
+    margin-bottom: 15px;
+
+    .button-icon-header {
+      font-size: 14px;
+      margin: 2px;
+
+      > svg {
+        margin-top: 7px;
+      }
+    }
+
   }
 `;
