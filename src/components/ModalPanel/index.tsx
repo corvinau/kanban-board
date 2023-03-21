@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Modal from 'react-modal';
 
-import { FaRegTrashAlt } from 'react-icons/fa';
+import { FaTimes } from 'react-icons/fa';
+
+import { useHookModal } from '../../hooks/useHookModal';
 
 import './styles.css';
 
@@ -11,7 +13,7 @@ interface IModalProps {
   button: React.ReactNode;
   title: string;
   form?: React.ReactNode;
-  action?: 'new' | 'edit' | 'delete';
+  action?: 'new' | 'edit';
 }
 
 const ModalPanel: React.FC<IModalProps> = ({
@@ -20,20 +22,7 @@ const ModalPanel: React.FC<IModalProps> = ({
   form,
   action = 'new',
 }) => {
-  const [modalIsOpen, setIsOpen] = useState(false);
-
-  const handleOpenModal = () => {
-    setIsOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsOpen(false);
-  };
-
-  // const handleDeleteCard = () => {
-  //   console.log('clicou');
-  //   handleCloseModal();
-  // };
+  const { modalIsOpen, handleOpenModal, handleCloseModal } = useHookModal();
 
   return (
     <div>
@@ -50,64 +39,23 @@ const ModalPanel: React.FC<IModalProps> = ({
         onRequestClose={handleCloseModal}
         contentLabel={title}
         overlayClassName="modal-overlay"
-        className={
-          action === 'delete' ? 'modal-content-delete' : 'modal-content'
-        }
+        className="modal-content"
       >
-        {action === 'delete' ? (
-          <div className="modal-header-delete">
-            <h1>{title}</h1>
+        <div role="button" className="modal-close" onClick={handleCloseModal}>
+          <div className="button-icon">
+            <FaTimes />
           </div>
-        ) : (
-          <div className="modal-header">
-            <h2>{title}</h2>
+        </div>
 
-            {action === 'edit' ? (
-              <ModalPanel
-                button={
-                  <button
-                  // onClick={handleDeleteCard}
-                  >
-                    <FaRegTrashAlt />
-                  </button>
-                }
-                title="Excluir cartão?"
-                action="delete"
-              />
-            ) : (
-              <></>
-            )}
-          </div>
-        )}
+        <div className="modal-header">
+          <h2>{title}</h2>
+        </div>
 
-        {action === 'delete' ? (
-          <>
-            <div className="modal-button-delete">
-              <button className="button-delete" onClick={handleCloseModal}>
-                Cancelar
-              </button>
-              <button
-                className="button-confirm-delete"
-                onClick={handleCloseModal}
-              >
-                Excluir
-              </button>
-            </div>
-          </>
-        ) : (
-          <>
-            <hr className="divider" />
+        <>
+          <hr className="divider" />
 
-            {form}
-
-            <div className="modal-button">
-              <button onClick={handleCloseModal}>Cancelar</button>
-              <button className="button-save" onClick={handleCloseModal}>
-                Salvar
-              </button>
-            </div>
-          </>
-        )}
+          {form}
+        </>
       </Modal>
     </div>
   );

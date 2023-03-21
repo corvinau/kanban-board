@@ -20,11 +20,6 @@ export const Container = styled.div`
     margin: 0 20px 15px;
   }
 
-  .column-actions {
-    display: flex;
-    flex-direction: row;
-  }
-
   .column-name {
     font-weight: 700;
     font-size: 18px;
@@ -37,10 +32,11 @@ export const Container = styled.div`
     margin: 0 15px 0 20px
   }
 
-  .column-action-button,
   .column-button {
     display: flex;
     align-items: center;
+
+    margin: 15px 20px 0px;
 
     border-radius: 5px;
     color: #FFFFFF;
@@ -50,10 +46,6 @@ export const Container = styled.div`
       box-shadow: inset 0em 0em 0em 10em rgba(0, 0, 0, 0.3);
       cursor: pointer;
     }
-  }
-
-  .column-button {
-    margin: 15px 20px 0px;
   }
 
   .button-icon {
@@ -71,5 +63,45 @@ export const Container = styled.div`
     font-weight: 500;
     font-size: 16px;
     color: #FFFFFF;
+  }
+`;
+
+export const ContainerFormColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  form > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-bottom: 10px;
+
+    :last-child {
+      margin-bottom: 0;
+    }
+
+    label {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid #8a8a8a;
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 16px;
+      box-sizing: border-box;
+      height: 40px;
+      background-color: #ffffff;
+      display: inline-block;
+    }
+  }
+
+  .button-save {
+    margin-top: 20px;
+    display: flex;
+    float: right;
   }
 `;

@@ -59,4 +59,10 @@ export const Container = styled.div`
       background-repeat: no-repeat;
     }
   }
+
+  .button-save {
+    margin-top: 20px;
+    display: flex;
+    float: right;
+  }
 `;
